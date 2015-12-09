@@ -61,16 +61,14 @@ public class PBKDF2PasswordEncoderTest {
     @Parameters
     public static Collection<Object[]> data() {
         /**
-         * The following data was taken from test vectors described in https://www.ietf.org/rfc/rfc6070.txt
+         * The following data was taken from test vectors described in http://stackoverflow.com/questions/15593184/pbkdf2-hmac-sha-512-test-vectors
          * Derived key values were converted to upper case format to comply with xsd:hexBinary type
          */
         return Arrays.asList(new Object[][] {
-            {1, 160, "password", "salt".getBytes(), "0C60C80F961F0E71F3A9B524AF6012062FE037A6"},
-            {2, 160, "password", "salt".getBytes(), "EA6C014DC72D6F8CCD1ED92ACE1D41F0D8DE8957"},
-            {4096, 160, "password", "salt".getBytes(), "4B007901B765489ABEAD49D926F721D065A429C1"},
-            {16777216, 160, "password", "salt".getBytes(), "EEFE3D61CD4DA4E4E9945B3D6BA2158C2634E984"},
-            {4096, 200, "passwordPASSWORDpassword", "saltSALTsaltSALTsaltSALTsaltSALTsalt".getBytes(), "3D2EEC4FE41C849B80C8D83662C0E44A8B291A964CF2F07038"},
-            {4096, 128, "pass\0word", "sa\0lt".getBytes(), "56FA6AA75548099DCC37D7F03425E0C3"},
+            {1, 512, "password", "salt".getBytes(), "867F70CF1ADE02CFF3752599A3A53DC4AF34C7A669815AE5D513554E1C8CF252C02D470A285A0501BAD999BFE943C08F050235D7D68B1DA55E63F73B60A57FCE"},
+            {2, 512, "password", "salt".getBytes(), "E1D9C16AA681708A45F5C7C4E215CEB66E011A2E9F0040713F18AEFDB866D53CF76CAB2868A39B9F7840EDCE4FEF5A82BE67335C77A6068E04112754F27CCF4E"},
+            {4096, 512, "password", "salt".getBytes(), "D197B1B33DB0143E018B12F3D1D1479E6CDEBDCC97C5C0F87F6902E072F457B5143F30602641B3D55CD335988CB36B84376060ECD532E039B742A239434AF2D5"},
+            {4096, 512, "passwordPASSWORDpassword", "saltSALTsaltSALTsaltSALTsaltSALTsalt".getBytes(), "8C0511F4C6E597C6AC6315D8F0362E225F3C501495BA23B868C005174DC4EE71115B59F9E60CD9532FA33E0F75AEFE30225C583A186CD82BD4DAEA9724A3D3B8"},
         });
     }
 

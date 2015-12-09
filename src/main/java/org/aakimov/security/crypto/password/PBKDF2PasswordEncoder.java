@@ -79,7 +79,7 @@ public class PBKDF2PasswordEncoder implements PasswordEncoder {
         this.iterationCount = iterationCount;
         this.saltLength = saltLength;
         this.derivedKeyLength = derivedKeyLength;
-        this.secretKeyAlgorithm = "PBKDF2WithHmacSHA1";
+        this.secretKeyAlgorithm = "PBKDF2WithHmacSHA512";
         if (secureRandom == null) {
             try {
                 secureRandom = SecureRandom.getInstance("SHA1PRNG");
